@@ -49,7 +49,6 @@ lib/
 flutter create codealpha_flashcardquiz
 cd codealpha_flashcardquiz
 flutter pub add shared_preferences
-# replace the generated lib/ folder with the lib/ folder from this repo
 flutter run
 ```
 
