@@ -17,39 +17,44 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 
 
-# CodeAlpha_QuoteGenerator
+# CodeAlpha_FlashcardQuiz
 
-A clean, minimal Random Quote Generator built with Flutter for the CodeAlpha App Development Internship (Task 2).
+A Flashcard Quiz App built with Flutter for the CodeAlpha App Development Internship (Task 1).
 
 ## Features
 
-- Shows a random quote every time the app opens
-- "New Quote" button always shows a different quote from the previous one
-- Quote text and author name displayed clearly
-- Smooth fade/slide animation between quotes
-- Copy button to copy the quote to the clipboard
-- Minimal Material 3 UI, no extra packages needed
+- Each flashcard has a question on the front and the answer on the back
+- "Show Answer" / "Hide Answer" button (tapping the card also flips it)
+- "Next" and "Previous" buttons with a "Card X of Y" progress bar
+- Add, edit and delete flashcards from the Manage screen
+- Cards are saved on the device, so they are still there after restarting the app
+- Clean Material 3 interface with simple animations
+- Starts with a few sample cards on first launch
 
 ## Project structure
 
 ```
 lib/
-  main.dart                    App entry point and theme
-  models/quote.dart            Quote model (text, author)
-  data/quote_repository.dart   Quote list and random picker
-  screens/quote_screen.dart    Main UI
+  main.dart                       App entry point and theme
+  models/flashcard.dart           Flashcard model (JSON support)
+  data/flashcard_store.dart       State + local storage (shared_preferences)
+  screens/study_screen.dart       Study mode (flip, next, previous)
+  screens/manage_screen.dart      List, edit and delete cards
+  widgets/card_form_dialog.dart   Add / edit dialog with validation
 ```
 
 ## Run it
 
 ```bash
-flutter create CodeAlpha_QuoteGenerator
-cd CodeAlpha_QuoteGenerator
+flutter create codealpha_flashcardquiz
+cd codealpha_flashcardquiz
+flutter pub add shared_preferences
 # replace the generated lib/ folder with the lib/ folder from this repo
-flutter pub get
 flutter run
 ```
 
 ## Tech
+
+Flutter, Dart, Material 3, shared_preferencesch
 
 Flutter, Dart, Material 3
